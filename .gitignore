@@ -1,0 +1,16 @@
+bin/
+classes/
+build/
+target/
+.gradle/
+.settings/
+.project
+.classpath
+*.bak
+.DS_Store
+out
+.idea
+gradle/wrapper/*.jar
+rebel.xml
+mcp.log
+.claude/
