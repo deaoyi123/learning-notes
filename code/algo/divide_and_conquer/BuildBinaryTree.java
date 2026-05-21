@@ -27,6 +27,14 @@ public class BuildBinaryTree {
 
     }
 
+    /**
+     * @param preorder             前序遍历的值数组
+     * @param inorderValueIndexMap 中序遍历值对应索引的映射
+     * @param rootIndex            当前树根节点在preorder里的索引位置
+     * @param l                    当前树在inorder的最左索引位置
+     * @param r                    当前树在inorder的最右索引位置
+     * @return 根节点
+     */
     private static TreeNode dfs(int[] preorder, Map<Integer, Integer> inorderValueIndexMap, int rootIndex, int l, int r) {
         if (l > r) {
             return null;
