@@ -9,7 +9,7 @@ import java.util.List;
 public class NQueens {
     public static void main(String[] args) {
         int n = 4;
-        List<List<List<String>>> lists = nQueens(4);
+        List<List<List<String>>> lists = nQueens(n);
         for (int i = 0; i < lists.size(); i++) {
             System.out.println("方案" + (i + 1) + ":");
             List<List<String>> scheme = lists.get(i);
