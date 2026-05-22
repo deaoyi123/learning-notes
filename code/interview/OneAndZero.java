@@ -43,8 +43,11 @@ public class OneAndZero {
     }
 
     private static int findMaxForm(String[] strs, int m, int n) {
+        // dp[i][j]: 最多使用 i 个 0 和 j 个 1，能得到的最大子集大小
         int[][] dp = new int[m + 1][n + 1];
+
         for (String str : strs) {
+            // 统计当前字符串中 0 和 1 的个数
             int ones = 0;
             int zeros = 0;
             for (int i = 0; i < str.length(); i++) {
@@ -54,8 +57,12 @@ public class OneAndZero {
                     zeros++;
                 }
             }
+
+            // 01背包：每个字符串只能用一次，所以倒序遍历避免重复选择
             for (int i = m; i >= zeros; i--) {
                 for (int j = n; j >= ones; j--) {
+                    // dp[i - zeros][j - ones] + 1: 使用当前字符串后的子集大小
+                    // dp[i][j]: 不使用当前字符串时的子集大小
                     dp[i][j] = Math.max(dp[i][j], dp[i - zeros][j - ones] + 1);
                 }
             }
